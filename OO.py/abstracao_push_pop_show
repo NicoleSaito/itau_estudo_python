@@ -1,0 +1,28 @@
+# Exemplo 1: OO em Python: push() / pop () / show()
+
+# Situação: Empilhando pratos
+
+class Pilha:
+    def __init__(self): 
+        self.prato = [] 
+
+    def push(self, prato): 
+        self.prato.append(prato) 
+
+    def pop(self): 
+        if not self.vazio():
+            return self.prato.pop() 
+        else:
+            return "A pilha de pratos está vazia!"
+        
+    def show(self): 
+        print(self.prato) 
+
+    def vazio(self): 
+        return len(self.prato) == 0 
+
+stack = Pilha()
+stack.push('Prato de Porcelana') 
+stack.push('Prato de Plástico') 
+stack.push('Prato Descartável')
+stack.show()

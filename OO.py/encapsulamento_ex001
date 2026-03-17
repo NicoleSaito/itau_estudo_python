@@ -1,0 +1,61 @@
+# Exemplo 1: OO em Python - Encapsulamento
+
+# Conta Bancaria / Depósito / Saque / Mostrar Informações
+
+class ContaBancaria:
+    def __init__(self, titular, saldo_inicial=0):
+        self.__titular = titular      # Atributo privado
+        self.__saldo = saldo_inicial  # Atributo privado
+
+    # Getter para saldo
+    @property
+    def saldo(self):
+        return self.__saldo
+
+    # Setter para saldo (com validação)
+    @saldo.setter
+    def saldo(self, valor):
+        if valor < 0:
+            raise ValueError("O saldo não pode ser negativo!")
+        self.__saldo = valor
+
+    # Método para depósito
+    def depositar(self, valor):
+        if valor > 0:
+            self.__saldo += valor
+            print(f"Depósito de R${valor} realizado com sucesso.")
+        else:
+            print("Valor inválido para depósito.")
+
+    # Método para saque
+    def sacar(self, valor):
+        if 0 < valor <= self.__saldo:
+            self.__saldo -= valor
+            print(f"Saque de R${valor} realizado com sucesso.")
+        else:
+            print("Saldo insuficiente ou valor inválido.")
+
+    # Mostrar informações
+    def mostrar_informacoes(self):
+        print(f"Titular: {self.__titular} | Saldo: R${self.__saldo}")
+
+    # Criando uma conta
+    conta = ContaBancaria("Nicole", 100)
+
+    # Consultando saldo (getter via @property)
+    print(conta.saldo) # 100
+
+    # Fazendo depósito
+    conta.depositar(50) # Depósito de R$50 realizado com sucesso.
+
+    # Fazendo saque
+    conta.sacar(30) # Saque de R$30 realizado com sucesso.
+
+    # Tentando colocar saldo negativo (setter com validação)
+    try:
+        conta.saldo = -200
+    except ValueError as e:
+        print(e) # O saldo não pode ser negativo!
+
+    # Mostrando informações
+    conta.mostrar_informacoes()

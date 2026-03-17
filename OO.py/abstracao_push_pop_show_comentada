@@ -1,0 +1,28 @@
+# OO em Python: push() / pop () / show()
+
+class Pilha: # Criando a classe "Pilha" para representar uma pilha de pratos
+    def __init__(self): # Método construtor para inicializar a pilha
+        self.prato = [] # Cria uma lista vazia que guardará os elementos da nossa pilha
+
+    def push(self, prato): # Método para adicionar um prato à pilha
+        self.prato.append(prato) # Adiciona um prato à pilha usando o método append() (usado para adicionar 1 elemento na lista)
+
+    def pop(self): # Método para remover o prato do topo da pilha
+        if not self.vazio(): # Verifica se a pilha não está vazia antes de tentar remover um prato
+            return self.prato.pop() # Remove e retorna o prato do topo da pilha usando o método pop()
+        else:
+            return "A pilha de pratosestá vazia!" #Retorna uma mensagem caso a pilha esteja vazia
+        
+    def show(self): # Método para visualizar o estado atual da pilha
+        print(self.prato) # Exibe a lista de itens no console
+
+    def vazio(self): # Função auxiliar para checar o status da lista
+        return len(self.prato) == 0 # Retorna True se o tamanho for 0, ou False se tiver itens
+
+# --- Execução do Código ---
+
+stack = Pilha() # Instancia (cria) um objeto real chamado 'stack' a partir da classe Pilha
+stack.push('Prato de Porcelana') # Chama o método push e guarda o primeiro prato
+stack.push('Prato de Plástico') # Guarda o segundo prato (agora este está no topo)
+stack.push('Prato Descartável') # Guarda o terceiro prato (topo atual)
+stack.show() # Exibe o estado atual da pilha
