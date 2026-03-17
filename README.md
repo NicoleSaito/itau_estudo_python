@@ -1,2 +1,2 @@
-# itau_estudo_python
+# Manual de Estágio: Python
 Estudos de casos com Python
