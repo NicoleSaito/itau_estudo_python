@@ -1,0 +1,55 @@
+# Sistema bancário com encapsulamento e abstração
+
+from abc import ABC, abstractmethod
+
+# Classe abstrata (Abstração)
+class ContaBancaria(ABC):
+    def __init__(self, titular):
+        self._titular = titular # atributo protegido
+
+    @abstractmethod
+    def mostrar_informacoes(self):
+        pass
+
+# Classe concreta (Encapsulamento)
+class ContaCorrente(ContaBancaria):
+    def __init__(self, titular, saldo_inicial=0):
+        super().__init__(titular)
+        self.__saldo = saldo_inicial # atributo privado
+
+    # Getter e Setter com property
+    @property
+    def saldo(self):
+        return self.__saldo
+
+    @saldo.setter
+    def saldo(self, valor):
+        if valor < 0:
+            raise ValueError("Valor inválido! O saldo não pode ser negativo.")
+        self.__saldo = valor
+
+    def depositar(self, valor):
+        if valor > 0:
+            self.__saldo += valor
+            print(f"Depósito de R${valor:.2f} realizado com sucesso!")
+        else:
+            print("Valor de depósito inválido!")
+
+    def sacar(self, valor):
+        if 0 < valor <= self.__saldo:
+            self.__saldo -= valor
+            print(f"Saque de R${valor:.2f} realizado com sucesso!")
+        else:
+            print("Valor de saque inválido ou saldo insuficiente!")
+
+    def mostrar_informacoes(self):
+        print(f"Titular: {self._titular} | Saldo: R${self.__saldo:.2f}")  
+
+
+conta = ContaCorrente("Nicole", 100)
+conta.mostrar_informacoes()
+
+conta.depositar(50)         # Depósito
+conta.sacar(30)             # Saque
+print(conta.saldo)          # Getter
+conta.mostrar_informacoes() # Exibe titular e saldo]
