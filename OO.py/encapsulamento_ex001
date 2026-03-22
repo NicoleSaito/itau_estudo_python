@@ -35,27 +35,18 @@ class ContaBancaria:
         else:
             print("Saldo insuficiente ou valor inválido.")
 
-    # Mostrar informações
     def mostrar_informacoes(self):
         print(f"Titular: {self.__titular} | Saldo: R${self.__saldo}")
 
-    # Criando uma conta
-    conta = ContaBancaria("Nicole", 100)
+conta = ContaBancaria("Nicole", 100)
 
-    # Consultando saldo (getter via @property)
-    print(conta.saldo) # 100
+print(conta.saldo)
+conta.depositar(50)
+conta.sacar(30)
 
-    # Fazendo depósito
-    conta.depositar(50) # Depósito de R$50 realizado com sucesso.
+try:
+    conta.saldo = -200
+except ValueError as e:
+    print(e) 
 
-    # Fazendo saque
-    conta.sacar(30) # Saque de R$30 realizado com sucesso.
-
-    # Tentando colocar saldo negativo (setter com validação)
-    try:
-        conta.saldo = -200
-    except ValueError as e:
-        print(e) # O saldo não pode ser negativo!
-
-    # Mostrando informações
-    conta.mostrar_informacoes()
+conta.mostrar_informacoes()
