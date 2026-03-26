@@ -1,0 +1,42 @@
+[
+  {
+    "Nome": "Carlos Eduardo Souza",
+    "Idade": 34,
+    "Genero": "Masculino",
+    "Endereco": "Rua das Flores, 123 - São Paulo, SP",
+    "Telefone": "(11) 91234-5678",
+    "CPF": "123.456.789-00"
+  },
+  {
+    "Nome": "Mariana Alves Pereira",
+    "Idade": 28,
+    "Genero": "Feminino",
+    "Endereco": "Av. Paulista, 987 - São Paulo, SP",
+    "Telefone": "(11) 99876-5432",
+    "CPF": "987.654.321-00"
+  },
+  {
+    "Nome": "João Pedro Martins",
+    "Idade": 41,
+    "Genero": "Masculino",
+    "Endereco": "Rua XV de Novembro, 456 - Curitiba, PR",
+    "Telefone": "(41) 99123-4567",
+    "CPF": "456.789.123-00"
+  },
+  {
+    "Nome": "Fernanda Rocha Lima",
+    "Idade": 22,
+    "Genero": "Feminino",
+    "Endereco": "Rua Bahia, 321 - Belo Horizonte, MG",
+    "Telefone": "(31) 98888-7777",
+    "CPF": "321.654.987-00"
+  },
+  {
+    "Nome": "Ricardo Mendes Costa",
+    "Idade": 37,
+    "Genero": "Masculino",
+    "Endereco": "Av. Beira Mar, 159 - Fortaleza, CE",
+    "Telefone": "(85) 97777-6666",
+    "CPF": "654.123.789-00"
+  }
+]
