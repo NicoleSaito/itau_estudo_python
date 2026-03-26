@@ -1,0 +1,43 @@
+# JSON para Excel
+
+Script em Python para ler um arquivo JSON, selecionar/filtrar campos e exportar para Excel automaticamente.
+
+---
+
+## Como usar
+
+### 1. Clone ou baixe o projeto
+```bash
+git clone https://seu-repositorio.git
+cd seu-repositorio
+
+### 2. Instale dependências
+pip install pandas openpyxl
+
+### 3. Estrutura do projeto
+/projeto
+ ├── script.py
+ └── dados.json
+
+### 4. Execute o script
+python script.py
+
+### 5. Escolha os campos que deseja filtrar do JSON
+- O programa irá de mostrar os campos disponíveis:
+Nome
+Idade
+Genero
+Endereco
+Telefone
+CPF
+
+- Digite os campos desejados separados por vígula:
+Nome, Idade, Endereco
+
+### 6. Saída 
+- O arquivo da planilha será gerado automaticamente:
+resultado.xlsx
+
+
+
+
